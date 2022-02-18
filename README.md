@@ -35,7 +35,7 @@ cv en testapigrantget
 
 ## Getting Started
 
-Navigate to an Civi page, and it will call Grant.get using api3 and api4, then log the count of the results using CRM_Core_Error::debug_log_message(). If the user is not an admin, the API v4 call always seems to result in an error.
+Navigate to any Civi page, and it will call Grant.get using api3 and api4, then log the count of the results using CRM_Core_Error::debug_log_message(). If the user is not an admin, the API v4 call always seems to result in an error.
 
 ## Known Issues
 
