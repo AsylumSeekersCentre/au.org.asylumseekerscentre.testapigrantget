@@ -148,10 +148,17 @@ function testapigrantget_civicrm_alterContent(  &$content, $context, $tplName, &
     'sequential' => 1,
   ]);
   CRM_Core_Error::debug_log_message('api3 Grant.get count: '.$api3result['count']);
-  $api4grants = \Civi\Api4\Grant::get()
-    ->setLimit(25)
-    ->execute();
-  CRM_Core_Error::debug_log_message('api4 Grant.get count: '.count($api4grants));
+  // You can remove this try...except wrapping to see a more useful error message 
+  // in the CMS log, but be warned that doing so will crash the site for non-admins.
+  try {
+    $api4grants = \Civi\Api4\Grant::get()
+      ->setLimit(25)
+      ->execute();
+    CRM_Core_Error::debug_log_message('api4 Grant.get count: '.count($api4grants));
+  }
+  catch (exception $e) {
+    CRM_Core_Error::debug_log_message('testapigrantget Failed with exception: '.$e);
+  }
 }
 
 // --- Functions below this ship commented out. Uncomment as required. ---

@@ -1,15 +1,13 @@
 # au.org.asylumseekerscentre.testapigrantget
 
-![Screenshot](/images/screenshot.png)
-
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
+This extension demonstrates a current issue with API v4 Grant.get in CiviCRM.
 
 The extension is licensed under [AGPL-3.0](LICENSE.txt).
 
 ## Requirements
 
 * PHP v7.2+
-* CiviCRM (*FIXME: Version number*)
+* CiviCRM 5.46.2
 
 ## Installation (Web UI)
 
@@ -37,8 +35,9 @@ cv en testapigrantget
 
 ## Getting Started
 
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
+Navigate to an Civi page, and it will call Grant.get using api3 and api4, then log the count of the results using CRM_Core_Error::debug_log_message(). If the user is not an admin, the API v4 call always seems to result in an error.
 
 ## Known Issues
 
-(* FIXME *)
+This extension is not intended for use on production sites.
+
